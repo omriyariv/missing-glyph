@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+<style>
+@font-face {
+    font-family: 'glyph_F0915';
+    src: url('glyph_F0915.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'glyph_F0915_no_hinting';
+    src: url('glyph_F0915_no_hinting.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+div {
+  font-size: 16px;
+  margin: 20px 0;
+}
+
+span:before {
+  content: '\F0915';
+}
+
+#content_hinting_no_bug {
+  font-family: glyph_F0915;
+  font-size: 53px;
+}
+
+#content_hinting_with_bug {
+  font-family: glyph_F0915;
+  font-size: 54px;
+}
+
+#content_no_hinting_no_bug {
+  font-family: glyph_F0915_no_hinting;
+  font-size: 54px;
+}
+
+</style>
+</head>
+<body>
+<div>
+  <span id="content_hinting_no_bug"></span>
+  with hinting 53px glyph shows
+</div>
+<div>
+  <span id="content_hinting_with_bug"></span>
+  with hinting 54px glyph missing
+</div>
+<div>
+  <span id="content_no_hinting_no_bug"></span>
+  no hinting 54px glyph shows
+</div>
+</body>
